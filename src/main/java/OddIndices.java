@@ -6,7 +6,7 @@ public class OddIndices {
 
         int length = 0;
 
-        for (int i = 1; i < array.length; i += 2){
+        for (int i = 1; i < array.length; i += 2) {
             length++;
         }
 
