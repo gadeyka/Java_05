@@ -5,13 +5,6 @@ import java.util.Arrays;
 
 public class OddIndicesTest {
 
-   /*
-    Test Data:
-    Input = {-45, 590, 234, 985, 12, 68}
-    Expected Result =  {590, 985, 68}
-    */
-
-
     /*
     1. Positive testing
     if (array.length > 1)
@@ -53,7 +46,7 @@ public class OddIndicesTest {
     return new int[0];
      */
     @Test
-    public void testArrayLengthEqualEmpty_NegativeTest() {
+    public void testArrayLengthEqualEmpty_Negative() {
         //arrange
         int[] array = {};
         int[] expectedResult = {};

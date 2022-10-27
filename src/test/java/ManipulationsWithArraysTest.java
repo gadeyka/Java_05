@@ -3,7 +3,7 @@ import org.testng.annotations.Test;
 
 public class ManipulationsWithArraysTest {
 
-    //Positive testing
+    // 12. Positive testing
 
     //(array != null) && (array.length != 0) && (number != Integer.MAX_VALUE)
     // return true
@@ -122,6 +122,49 @@ public class ManipulationsWithArraysTest {
 
         //assert
         Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    /*5. Positive testing*/
+    @Test
+    public void testValidArrayMultiplyByValidNumber() {
+        //arrange
+        int[] array = {1, 2, 3, 4, 5};
+        int number = 3;
+        int[] expectedResult = {3, 6, 9, 12, 15};
+
+        //act
+        int[] actualResult = new ManipulationsWithArrays().multiplyArrayByNumber(array, number);
+
+        //assert
+        Assert.assertEquals(actualResult,expectedResult);
+    }
+
+    //6. Positive testing
+    @Test
+    public void testValidIntArrayToValidDoubleArray() {
+        //arrange
+        int[] array = {1, 2, 3, 4, 5};
+        double[] expectedResult = {1.0, 2.0, 3.0, 4.0, 5.0};
+
+        //act
+        double[] actualResult = new ManipulationsWithArrays().toDoubleArray(array);
+
+        //assert
+        Assert.assertEquals(actualResult,expectedResult);
+    }
+
+    //7. Positive testing
+    @Test
+    public void testValidDoubleArrayToValidIntArray() {
+        //arrange
+        double[] array = {1.1, 2.5, 3.7, 4.0, 5.5};
+        int[] expectedResult = {1, 2, 3, 4, 5};
+
+        //act
+        int[] actualResult = new ManipulationsWithArrays().toIntArray(array);
+
+        //assert
+        Assert.assertEquals(actualResult,expectedResult);
     }
 
 }
