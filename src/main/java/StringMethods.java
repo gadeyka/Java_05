@@ -151,12 +151,34 @@ public class StringMethods {
             “Abracadabra” → true
             “Whippersnapper” → false*/
     public boolean compareFirstAndLastCharacter(String str) {
-        if (str.toLowerCase().substring(0, 1).equals(str.toLowerCase().substring(str.length() - 1))) {
-
-            return true;
+        if (str != null && !str.trim().isEmpty() && !str.trim().contains(" ") && str.length() > 1) {
+            str = str.trim().toLowerCase();
+            return str.substring(0, 1).equals(str.substring(str.length() - 1));
         }
 
         return false;
+    }
+
+    //17
+    /*Напишите метод, который принимает строку и index, и возвращает численное значение буквы,
+        которая находится на позиции index (использовать только один метод класса String*/
+    public int returnNumericalValueOfString(String str, int num) {
+        if (str == null || str.isEmpty()) {
+
+            return -1;
+        }
+
+        if (num < 0 || num > 127) {
+
+            return -1;
+        }
+
+        if (num > str.length() - 1) {
+
+            return -1;
+        }
+
+        return (int) str.charAt(num);
     }
 
 }

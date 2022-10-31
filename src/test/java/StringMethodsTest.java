@@ -240,4 +240,84 @@ public class StringMethodsTest {
         Assert.assertEquals(actualResult, expectedResult);
     }
 
+    //#17. Positive testing
+
+    //1. return numerical value of the string with any letter
+    @Test
+    public void testNumericalValueOfTheStringWithLetter_HappyPath() {
+        //arrange
+        String str = "QA for Everyone!";
+        int ind = 4;
+        int expectedResult = 111;
+
+        //act
+        int actualResult = new StringMethods().returnNumericalValueOfString(str, ind);
+
+        //assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    //2. return numerical value of the string with any symbol
+    @Test
+    public void testNumericalValueOfTheStringWithSymbol_HappyPath() {
+        //arrange
+        String str = "QA for Everyone!";
+        int ind = 15;
+        int expectedResult = 33;
+
+        //act
+        int actualResult = new StringMethods().returnNumericalValueOfString(str, ind);
+
+        //assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    //#17. Negative testing
+
+    //3. return -1 if String is Empty or Null
+    @Test
+    public void testNumericalValueOfTheEmptyOrNullString_Negative() {
+        //arrange
+        String str = "";
+        int ind = 4;
+        int expectedResult = -1;
+
+        //act
+        int actualResult = new StringMethods().returnNumericalValueOfString(str, ind);
+
+        //assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    //4. return -1 if number is greater than String.length
+    @Test
+    public void testNumericalValueWhenIndexOutRange_Negative() {
+        //arrange
+        String str = "QA for Everyone!";
+        int ind = 16;
+        int expectedResult = -1;
+
+        //act
+        int actualResult = new StringMethods().returnNumericalValueOfString(str, ind);
+
+        //assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    //4. return -1 if String is Empty or Null
+    @Test
+    public void testNumericalValueWhenNumber_Negative1() {
+        //arrange
+        String str = "QA for Everyone!";
+        int ind = -5;
+        int expectedResult = -1;
+
+        //act
+        int actualResult = new StringMethods().returnNumericalValueOfString(str, ind);
+
+        //assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+
 }
